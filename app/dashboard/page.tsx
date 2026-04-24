@@ -21,6 +21,9 @@ import PrescriptionView from "@/components/PrescriptionView";
 import LabReportsView from "@/components/LabReportsView";
 import ReferralView from "@/components/ReferralView";
 import ConsentView from "@/components/ConsentView";
+import AvailabilityView from "@/components/AvailabilityView";
+import DepositsView from "@/components/DepositsView";
+import ReviewsView from "@/components/ReviewsView";
 import { DashboardProvider, useDashboard } from "@/lib/dashboard-context";
 import { updateAppointment, sendMessage, markConversationRead, getMessages } from "@/lib/api";
 import type { RevaAppointment, RevaConversation, RevaMessage } from "@/lib/supabase/types";
@@ -29,7 +32,7 @@ import DoctorBrief from "@/components/DoctorBrief";
 import BriefButton from "@/components/BriefButton";
 
 /* ─── Types ─── */
-type View = "Dashboard" | "Calendar" | "Messages" | "Analytics" | "Settings" | "Notifications" | "Patients" | "Billing" | "Queue" | "Follow-Up" | "No-Show" | "Prescriptions" | "Lab Reports" | "Referrals" | "Consent";
+type View = "Dashboard" | "Calendar" | "Messages" | "Analytics" | "Settings" | "Notifications" | "Patients" | "Billing" | "Queue" | "Follow-Up" | "No-Show" | "Prescriptions" | "Lab Reports" | "Referrals" | "Consent" | "Availability" | "Deposits" | "Reviews";
 type AppointmentStatus = "Confirmed" | "Pending" | "Cancelled";
 
 interface Appointment {
@@ -141,6 +144,9 @@ const NAV_ITEMS: { icon: React.ElementType; label: View; badge?: number }[] = [
   { icon: BarChart3,       label: "Analytics" },
   { icon: Bell,            label: "Notifications",  badge: 3 },
   { icon: Settings,        label: "Settings" },
+  { icon: Clock,           label: "Availability" },
+  { icon: CreditCard,      label: "Deposits" },
+  { icon: Star,            label: "Reviews" },
 ];
 
 /* ─── Helpers ─── */
@@ -1008,6 +1014,9 @@ function DashboardPageInner() {
     Analytics:     { title: "Analytics",                     sub: "Your clinic performance at a glance" },
     Notifications: { title: "Notifications",                 sub: `${unreadNotifs} unread notifications` },
     Settings:      { title: "Settings",                      sub: "Manage your Reva configuration" },
+    Availability:  { title: "Availability & Slots",          sub: "Block time, set working hours, manage leaves" },
+    Deposits:      { title: "Deposits & Payments",           sub: "Razorpay deposit links and revenue tracking" },
+    Reviews:       { title: "Reviews & Reputation",          sub: "Manage patient feedback and Google reviews" },
   };
 
   return (
@@ -1118,6 +1127,9 @@ function DashboardPageInner() {
               {activeView === "Lab Reports"  && <LabReportsView addToast={addToast} />}
               {activeView === "Referrals"    && <ReferralView addToast={addToast} />}
               {activeView === "Consent"      && <ConsentView addToast={addToast} />}
+              {activeView === "Availability" && <AvailabilityView addToast={addToast} />}
+              {activeView === "Deposits"     && <DepositsView addToast={addToast} />}
+              {activeView === "Reviews"      && <ReviewsView clinicId={clinic?.id ?? ""} />}
               {activeView === "Analytics"     && <AnalyticsView />}
               {activeView === "Notifications" && <NotificationsView addToast={addToast} />}
               {activeView === "Settings"      && <SettingsView addToast={addToast} />}
