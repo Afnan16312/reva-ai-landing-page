@@ -8,7 +8,7 @@ import {
   useSpring,
   LayoutGroup,
 } from "framer-motion";
-import { useCountUp } from "@/lib/utils";
+import { useCountUp } from "@/lib/hooks";
 import {
   ChevronLeft,
   ChevronRight,

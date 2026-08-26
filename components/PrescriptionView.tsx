@@ -5,8 +5,9 @@ import React, {
   useEffect,
   useRef,
   useCallback,
+} from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import { useCountUp } from "@/lib/utils";
+import { useCountUp } from "@/lib/hooks";
 import {
   Search,
   Zap,

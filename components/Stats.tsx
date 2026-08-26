@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { useCountUp } from "@/lib/utils";
+import { useCountUp } from "@/lib/hooks";
 
 interface StatItem {
   value: string;

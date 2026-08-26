@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useCountUp } from "@/lib/utils";
+import { useCountUp } from "@/lib/hooks";
 import {
   TrendingUp,
   AlertCircle,
