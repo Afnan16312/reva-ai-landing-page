@@ -87,6 +87,10 @@ export default function ReviewsView({ clinicId }: ReviewsViewProps) {
   }, []);
 
   useEffect(() => {
+    if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") {
+      setLoading(false);
+      return;
+    }
     async function load() {
       try {
         const supabase = createClient();
@@ -129,6 +133,17 @@ export default function ReviewsView({ clinicId }: ReviewsViewProps) {
     const text = replyTexts[reviewId]?.trim();
     if (!text) return;
     setSubmitting(reviewId);
+
+    // In demo mode, update local state immediately
+    if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") {
+      setReviews(prev => prev.map(r => r.id === reviewId ? { ...r, reply_text: text, replied_at: new Date().toISOString() } : r));
+      setReplyingTo(null);
+      setReplyTexts(prev => { const n = { ...prev }; delete n[reviewId]; return n; });
+      showToast("Reply posted successfully!", "success");
+      setSubmitting(null);
+      return;
+    }
+
     try {
       const supabase = createClient();
       const { error } = await supabase

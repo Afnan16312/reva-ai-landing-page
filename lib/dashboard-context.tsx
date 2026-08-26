@@ -38,33 +38,38 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
   const todayStr = new Date().toISOString().split("T")[0];
 
   const load = useCallback(async () => {
-    setLoading(true);
-    const supabase = createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) { setLoading(false); return; }
-
-    const [clinicRes, apptRes, patientRes, convRes] = await Promise.all([
-      supabase.from("reva_clinics").select("*").eq("owner_id", user.id).single(),
-      supabase.from("reva_appointments")
-        .select("*, patient:reva_patients(id,name,phone,allergies,conditions), doctor:reva_doctors(id,name,specialization)")
-        .eq("appointment_date", todayStr)
-        .order("appointment_time"),
-      supabase.from("reva_patients").select("*").order("updated_at", { ascending: false }).limit(100),
-      supabase.from("reva_conversations").select("*").order("last_message_at", { ascending: false }).limit(50),
-    ]);
-
-    // Only set clinic if it belongs to this user (RLS handles this)
-    if (clinicRes.data) setClinic(clinicRes.data);
-
-    // Attach clinic_id filter (RLS does it but we do it anyway for safety)
-    const cid = clinicRes.data?.id;
-    if (cid) {
-      setAppointments((apptRes.data ?? []).filter(a => a.clinic_id === cid) as RevaAppointment[]);
-      setPatients((patientRes.data ?? []).filter(p => p.clinic_id === cid) as RevaPatient[]);
-      setConversations((convRes.data ?? []).filter(c => c.clinic_id === cid) as RevaConversation[]);
+    if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") {
+      setLoading(false);
+      return;
     }
+    setLoading(true);
+    try {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) { setLoading(false); return; }
 
-    setLoading(false);
+      const [clinicRes, apptRes, patientRes, convRes] = await Promise.all([
+        supabase.from("reva_clinics").select("*").eq("owner_id", user.id).single(),
+        supabase.from("reva_appointments")
+          .select("*, patient:reva_patients(id,name,phone,allergies,conditions), doctor:reva_doctors(id,name,specialization)")
+          .eq("appointment_date", todayStr)
+          .order("appointment_time"),
+        supabase.from("reva_patients").select("*").order("updated_at", { ascending: false }).limit(100),
+        supabase.from("reva_conversations").select("*").order("last_message_at", { ascending: false }).limit(50),
+      ]);
+
+      if (clinicRes.data) setClinic(clinicRes.data);
+      const cid = clinicRes.data?.id;
+      if (cid) {
+        setAppointments((apptRes.data ?? []).filter(a => a.clinic_id === cid) as RevaAppointment[]);
+        setPatients((patientRes.data ?? []).filter(p => p.clinic_id === cid) as RevaPatient[]);
+        setConversations((convRes.data ?? []).filter(c => c.clinic_id === cid) as RevaConversation[]);
+      }
+    } catch {
+      // Fallback to demo mock data on any network or database error
+    } finally {
+      setLoading(false);
+    }
   }, [todayStr]);
 
   useEffect(() => { load(); }, [load]);

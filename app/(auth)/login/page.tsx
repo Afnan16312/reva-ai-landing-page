@@ -26,6 +26,11 @@ export default function LoginPage() {
     e.preventDefault();
     setError(""); setSuccess(""); setLoading(true);
 
+    if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") {
+      router.push(next);
+      return;
+    }
+
     try {
       if (mode === "login") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });

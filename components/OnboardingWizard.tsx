@@ -628,6 +628,11 @@ function Step7({
   const handleGo = async () => {
     localStorage.setItem("reva_onboarded", "true");
 
+    if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") {
+      onComplete();
+      return;
+    }
+
     // Persist to Supabase
     try {
       const supabase = createClient();
@@ -788,6 +793,10 @@ export default function OnboardingWizard({ onComplete }: OnboardingWizardProps) 
 
   const handleSkip = async () => {
     localStorage.setItem("reva_onboarded", "true");
+    if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") {
+      onComplete();
+      return;
+    }
     // Save whatever partial data we have so far
     if (clinicInfo.name) {
       try {
