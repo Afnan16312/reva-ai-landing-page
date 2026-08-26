@@ -8,6 +8,7 @@ import {
   useSpring,
   LayoutGroup,
 } from "framer-motion";
+import { useCountUp } from "@/lib/utils";
 import {
   ChevronLeft,
   ChevronRight,
@@ -208,23 +209,6 @@ function buildDaySlots(day: number): TimeSlot[] {
     }
   }
   return slots;
-}
-
-/* ──────────────────────────────────── Count-up hook ── */
-function useCountUp(target: number, duration = 1200) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let start: number | null = null;
-    const step = (ts: number) => {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [target, duration]);
-  return value;
 }
 
 /* ─────────────────────────────────────────── Stat Card ── */

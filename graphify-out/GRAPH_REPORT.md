@@ -1,11 +1,11 @@
 # Graph Report - /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai  (2026-08-26)
 
 ## Corpus Check
-- 56 files · ~73,592 words
+- 57 files · ~88,715 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 203 nodes · 256 edges · 36 communities detected
+- 204 nodes · 256 edges · 37 communities detected
 - Extraction: 84% EXTRACTED · 16% INFERRED · 0% AMBIGUOUS · INFERRED: 42 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -46,6 +46,7 @@
 - [[_COMMUNITY_Community 33|Community 33]]
 - [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 36|Community 36]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `addToast()` - 20 edges
@@ -60,16 +61,16 @@
 10. `update()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `sendLink()` --calls--> `addToast()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/DepositsView.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx
-- `addInvoice()` --calls--> `addToast()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx
-- `sendAllReminders()` --calls--> `addToast()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx
-- `remindOne()` --calls--> `addToast()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx
-- `handleReminder()` --calls--> `addToast()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/ConsentView.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx
+- `addToast()` --calls--> `sendLink()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/DepositsView.tsx
+- `addToast()` --calls--> `addInvoice()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx
+- `addToast()` --calls--> `sendAllReminders()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx
+- `addToast()` --calls--> `remindOne()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx
+- `addToast()` --calls--> `handleReminder()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/ConsentView.tsx
 
 ## Communities
 
@@ -217,6 +218,10 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 36 - "Community 36"
+Cohesion: 1.0
+Nodes (0): 
+
 ## Knowledge Gaps
 - **Thin community `Community 17`** (2 nodes): `Home()`, `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -232,40 +237,42 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 23`** (1 nodes): `postcss.config.mjs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 24`** (1 nodes): `next.config.mjs`
+- **Thin community `Community 24`** (1 nodes): `server.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (1 nodes): `next-env.d.ts`
+- **Thin community `Community 25`** (1 nodes): `next.config.mjs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 26`** (1 nodes): `eslint.config.mjs`
+- **Thin community `Community 26`** (1 nodes): `next-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 27`** (1 nodes): `layout.tsx`
+- **Thin community `Community 27`** (1 nodes): `eslint.config.mjs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (1 nodes): `Hero.tsx`
+- **Thin community `Community 28`** (1 nodes): `layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (1 nodes): `Pricing.tsx`
+- **Thin community `Community 29`** (1 nodes): `Hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (1 nodes): `HowItWorks.tsx`
+- **Thin community `Community 30`** (1 nodes): `Pricing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (1 nodes): `ReviewsView.tsx`
+- **Thin community `Community 31`** (1 nodes): `HowItWorks.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (1 nodes): `Testimonials.tsx`
+- **Thin community `Community 32`** (1 nodes): `ReviewsView.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 33`** (1 nodes): `FollowUpView.tsx`
+- **Thin community `Community 33`** (1 nodes): `Testimonials.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 34`** (1 nodes): `CTA.tsx`
+- **Thin community `Community 34`** (1 nodes): `FollowUpView.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 35`** (1 nodes): `types.ts`
+- **Thin community `Community 35`** (1 nodes): `CTA.tsx`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 36`** (1 nodes): `types.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `addToast()` connect `Community 1` to `Community 8`, `Community 11`, `Community 6`, `Community 7`?**
-  _High betweenness centrality (0.106) - this node is a cross-community bridge._
+  _High betweenness centrality (0.105) - this node is a cross-community bridge._
 - **Why does `POST()` connect `Community 0` to `Community 5`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
 - **Why does `update()` connect `Community 0` to `Community 2`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Are the 15 inferred relationships involving `addToast()` (e.g. with `sendLink()` and `addInvoice()`) actually correct?**
   _`addToast()` has 15 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 7 inferred relationships involving `POST()` (e.g. with `createClient()` and `sendWhatsAppMessage()`) actually correct?**

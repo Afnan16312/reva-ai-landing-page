@@ -5,8 +5,8 @@ import React, {
   useEffect,
   useRef,
   useCallback,
-} from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { useCountUp } from "@/lib/utils";
 import {
   Search,
   Zap,
@@ -188,21 +188,6 @@ const dosageShort: Record<DosageOption, string> = {
 // ─────────────────────────────────────────────
 function genId() {
   return Math.random().toString(36).slice(2);
-}
-
-function useCountUp(target: number, duration = 1200) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let start: number | null = null;
-    const step = (ts: number) => {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      setValue(Math.floor(progress * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [target, duration]);
-  return value;
 }
 
 // ─────────────────────────────────────────────

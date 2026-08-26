@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { useCountUp } from "@/lib/utils";
 import {
   Send,
   Plus,
@@ -113,24 +114,6 @@ const SPECIALTY_COLORS: Record<string, string> = {
   Neurologist: "#F59E0B",
   Pulmonologist: "#06B6D4",
 };
-
-// ─── Count-up Hook ────────────────────────────────────────────────────────────
-
-function useCountUp(target: number, duration = 1200, decimals = 0) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let start: number | null = null;
-    const step = (ts: number) => {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(parseFloat((eased * target).toFixed(decimals)));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [target, duration, decimals]);
-  return value;
-}
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 

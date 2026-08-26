@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useCountUp } from "@/lib/utils";
 
 interface StatItem {
   value: string;
@@ -17,26 +18,8 @@ const stats: StatItem[] = [
   { value: "2 min", numericValue: 2, suffix: " min", label: "Average Response Time" },
 ];
 
-function useCountUp(target: number, duration: number, trigger: boolean) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!trigger) return;
-    let startTime: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      setCount(Math.floor(progress * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [trigger, target, duration]);
-
-  return count;
-}
-
 function AnimatedStat({ stat, index, triggered }: { stat: StatItem; index: number; triggered: boolean }) {
-  const count = useCountUp(stat.numericValue ?? 0, 1.5, triggered && stat.numericValue !== null);
+  const count = useCountUp(triggered ? (stat.numericValue ?? 0) : 0, 1500);
 
   return (
     <motion.div

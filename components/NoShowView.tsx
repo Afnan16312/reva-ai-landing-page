@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCountUp } from "@/lib/utils";
 import {
   TrendingDown,
   AlertCircle,
@@ -265,24 +266,6 @@ const MODEL_FACTORS = [
   { name: "Reschedule History", weight: "+10 pts", desc: "Multiple reschedules signal intent issues", color: "text-violet-400" },
   { name: "Patient Tenure", weight: "-10 pts", desc: "Long-term patients are 4× more reliable", color: "text-emerald-400" },
 ];
-
-// ─── Count-up Hook ────────────────────────────────────────────────────────────
-
-function useCountUp(target: number, duration = 1400) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let startTime: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(ease * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [target, duration]);
-  return value;
-}
 
 // ─── Stat Card ────────────────────────────────────────────────────────────────
 

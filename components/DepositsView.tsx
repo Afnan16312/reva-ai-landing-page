@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { useCountUp } from "@/lib/utils";
 import {
   CreditCard, TrendingUp, TrendingDown, Check, X,
   ChevronDown, ChevronUp, Send, Copy, ExternalLink,
@@ -20,23 +21,6 @@ const itemVariants = {
     transition: { delay: i * 0.04, duration: 0.4, ease: "easeOut" as const },
   }),
 };
-
-function useCountUp(target: number, duration = 1200, prefix = "") {
-  const [val, setVal] = useState(0);
-  const raf = useRef<number>(0);
-  useEffect(() => {
-    const start = performance.now();
-    const tick = (now: number) => {
-      const t = Math.min((now - start) / duration, 1);
-      const ease = 1 - Math.pow(1 - t, 3);
-      setVal(Math.round(ease * target));
-      if (t < 1) raf.current = requestAnimationFrame(tick);
-    };
-    raf.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf.current);
-  }, [target, duration]);
-  return prefix ? `${prefix}${val.toLocaleString("en-IN")}` : val;
-}
 
 type TxStatus = "Paid" | "Pending" | "Refunded" | "Waived";
 interface Transaction {

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCountUp } from "@/lib/utils";
 import {
   TrendingUp,
   AlertCircle,
@@ -83,26 +84,6 @@ const SERVICE_OPTIONS = [
 // ─────────────────────────────────────────────
 function fmtAmount(n: number) {
   return "₹" + n.toLocaleString("en-IN");
-}
-
-// ─────────────────────────────────────────────
-// COUNT-UP HOOK
-// ─────────────────────────────────────────────
-function useCountUp(target: number, duration = 1200) {
-  const [val, setVal] = useState(0);
-  const raf = useRef<number | null>(null);
-  useEffect(() => {
-    const start = performance.now();
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / duration, 1);
-      const ease = 1 - Math.pow(1 - p, 3);
-      setVal(Math.round(ease * target));
-      if (p < 1) raf.current = requestAnimationFrame(tick);
-    };
-    raf.current = requestAnimationFrame(tick);
-    return () => { if (raf.current) cancelAnimationFrame(raf.current); };
-  }, [target, duration]);
-  return val;
 }
 
 // ─────────────────────────────────────────────

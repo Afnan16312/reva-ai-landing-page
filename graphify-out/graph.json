@@ -31,12 +31,21 @@
       "norm_label": "postcss.config.mjs"
     },
     {
+      "label": "server.js",
+      "file_type": "code",
+      "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/server.js",
+      "source_location": "L1",
+      "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_server_js",
+      "community": 24,
+      "norm_label": "server.js"
+    },
+    {
       "label": "next.config.mjs",
       "file_type": "code",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/next.config.mjs",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_next_config_mjs",
-      "community": 24,
+      "community": 25,
       "norm_label": "next.config.mjs"
     },
     {
@@ -45,7 +54,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/next-env.d.ts",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_next_env_d_ts",
-      "community": 25,
+      "community": 26,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -54,7 +63,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/eslint.config.mjs",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_eslint_config_mjs",
-      "community": 26,
+      "community": 27,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -63,7 +72,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/layout.tsx",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_app_layout_tsx",
-      "community": 27,
+      "community": 28,
       "norm_label": "layout.tsx"
     },
     {
@@ -504,7 +513,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/Hero.tsx",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_hero_tsx",
-      "community": 28,
+      "community": 29,
       "norm_label": "hero.tsx"
     },
     {
@@ -567,7 +576,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/Pricing.tsx",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_pricing_tsx",
-      "community": 29,
+      "community": 30,
       "norm_label": "pricing.tsx"
     },
     {
@@ -981,7 +990,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/HowItWorks.tsx",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_howitworks_tsx",
-      "community": 30,
+      "community": 31,
       "norm_label": "howitworks.tsx"
     },
     {
@@ -1240,7 +1249,7 @@
       "label": "goNext()",
       "file_type": "code",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L780",
+      "source_location": "L785",
       "id": "onboardingwizard_gonext",
       "community": 2,
       "norm_label": "gonext()"
@@ -1249,7 +1258,7 @@
       "label": "goBack()",
       "file_type": "code",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L784",
+      "source_location": "L789",
       "id": "onboardingwizard_goback",
       "community": 2,
       "norm_label": "goback()"
@@ -1258,7 +1267,7 @@
       "label": "handleSkip()",
       "file_type": "code",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L789",
+      "source_location": "L794",
       "id": "onboardingwizard_handleskip",
       "community": 2,
       "norm_label": "handleskip()"
@@ -1267,7 +1276,7 @@
       "label": "canProceed()",
       "file_type": "code",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L812",
+      "source_location": "L821",
       "id": "onboardingwizard_canproceed",
       "community": 2,
       "norm_label": "canproceed()"
@@ -1276,7 +1285,7 @@
       "label": "renderStep()",
       "file_type": "code",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L817",
+      "source_location": "L826",
       "id": "onboardingwizard_renderstep",
       "community": 2,
       "norm_label": "renderstep()"
@@ -1287,7 +1296,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/ReviewsView.tsx",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_reviewsview_tsx",
-      "community": 31,
+      "community": 32,
       "norm_label": "reviewsview.tsx"
     },
     {
@@ -1296,7 +1305,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/Testimonials.tsx",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_testimonials_tsx",
-      "community": 32,
+      "community": 33,
       "norm_label": "testimonials.tsx"
     },
     {
@@ -1305,7 +1314,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/FollowUpView.tsx",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_followupview_tsx",
-      "community": 33,
+      "community": 34,
       "norm_label": "followupview.tsx"
     },
     {
@@ -1341,7 +1350,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/CTA.tsx",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_cta_tsx",
-      "community": 34,
+      "community": 35,
       "norm_label": "cta.tsx"
     },
     {
@@ -1726,7 +1735,7 @@
       "label": "useDashboard()",
       "file_type": "code",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/lib/dashboard-context.tsx",
-      "source_location": "L79",
+      "source_location": "L84",
       "id": "dashboard_context_usedashboard",
       "community": 16,
       "norm_label": "usedashboard()"
@@ -1791,7 +1800,7 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/lib/supabase/types.ts",
       "source_location": "L1",
       "id": "users_taaqibmasood_documents_web_dev_saas_reva_ai_lib_supabase_types_ts",
-      "community": 35,
+      "community": 36,
       "norm_label": "types.ts"
     },
     {
@@ -2055,8 +2064,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/DepositsView.tsx",
       "source_location": "L121",
       "weight": 1.0,
-      "_src": "depositsview_sendlink",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "depositsview_sendlink",
       "source": "page_addtoast",
       "target": "depositsview_sendlink"
     },
@@ -2067,8 +2076,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx",
       "source_location": "L801",
       "weight": 1.0,
-      "_src": "billingview_addinvoice",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "billingview_addinvoice",
       "source": "page_addtoast",
       "target": "billingview_addinvoice"
     },
@@ -2079,8 +2088,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx",
       "source_location": "L810",
       "weight": 1.0,
-      "_src": "billingview_sendallreminders",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "billingview_sendallreminders",
       "source": "page_addtoast",
       "target": "billingview_sendallreminders"
     },
@@ -2091,8 +2100,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx",
       "source_location": "L815",
       "weight": 1.0,
-      "_src": "billingview_remindone",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "billingview_remindone",
       "source": "page_addtoast",
       "target": "billingview_remindone"
     },
@@ -2103,8 +2112,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/NoShowView.tsx",
       "source_location": "L447",
       "weight": 1.0,
-      "_src": "noshowview_handleremind",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "noshowview_handleremind",
       "source": "page_addtoast",
       "target": "noshowview_handleremind"
     },
@@ -2115,8 +2124,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/NoShowView.tsx",
       "source_location": "L459",
       "weight": 1.0,
-      "_src": "noshowview_handlecall",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "noshowview_handlecall",
       "source": "page_addtoast",
       "target": "noshowview_handlecall"
     },
@@ -2127,8 +2136,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/NoShowView.tsx",
       "source_location": "L464",
       "weight": 1.0,
-      "_src": "noshowview_handlereschedule",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "noshowview_handlereschedule",
       "source": "page_addtoast",
       "target": "noshowview_handlereschedule"
     },
@@ -2139,8 +2148,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/PatientsView.tsx",
       "source_location": "L525",
       "weight": 1.0,
-      "_src": "patientsview_handlecopyphone",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "patientsview_handlecopyphone",
       "source": "page_addtoast",
       "target": "patientsview_handlecopyphone"
     },
@@ -2151,8 +2160,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/PatientsView.tsx",
       "source_location": "L534",
       "weight": 1.0,
-      "_src": "patientsview_handlesavenote",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "patientsview_handlesavenote",
       "source": "page_addtoast",
       "target": "patientsview_handlesavenote"
     },
@@ -2163,8 +2172,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/PatientsView.tsx",
       "source_location": "L540",
       "weight": 1.0,
-      "_src": "patientsview_handleaddpatient",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "patientsview_handleaddpatient",
       "source": "page_addtoast",
       "target": "patientsview_handleaddpatient"
     },
@@ -2175,8 +2184,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/ConsentView.tsx",
       "source_location": "L261",
       "weight": 1.0,
-      "_src": "consentview_handlereminder",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "consentview_handlereminder",
       "source": "page_addtoast",
       "target": "consentview_handlereminder"
     },
@@ -2187,8 +2196,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/ConsentView.tsx",
       "source_location": "L266",
       "weight": 1.0,
-      "_src": "consentview_handlemanualsign",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "consentview_handlemanualsign",
       "source": "page_addtoast",
       "target": "consentview_handlemanualsign"
     },
@@ -2199,8 +2208,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/ConsentView.tsx",
       "source_location": "L873",
       "weight": 1.0,
-      "_src": "consentview_handlesend",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "consentview_handlesend",
       "source": "page_addtoast",
       "target": "consentview_handlesend"
     },
@@ -2211,8 +2220,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/ConsentView.tsx",
       "source_location": "L1009",
       "weight": 1.0,
-      "_src": "consentview_handlesavetemplate",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "consentview_handlesavetemplate",
       "source": "page_addtoast",
       "target": "consentview_handlesavetemplate"
     },
@@ -2223,8 +2232,8 @@
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/PrescriptionView.tsx",
       "source_location": "L589",
       "weight": 1.0,
-      "_src": "prescriptionview_loadrecentrx",
-      "_tgt": "page_addtoast",
+      "_src": "page_addtoast",
+      "_tgt": "prescriptionview_loadrecentrx",
       "source": "page_addtoast",
       "target": "prescriptionview_loadrecentrx"
     },
@@ -3840,7 +3849,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L780",
+      "source_location": "L785",
       "weight": 1.0,
       "_src": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_onboardingwizard_tsx",
       "_tgt": "onboardingwizard_gonext",
@@ -3852,7 +3861,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L784",
+      "source_location": "L789",
       "weight": 1.0,
       "_src": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_onboardingwizard_tsx",
       "_tgt": "onboardingwizard_goback",
@@ -3864,7 +3873,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L789",
+      "source_location": "L794",
       "weight": 1.0,
       "_src": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_onboardingwizard_tsx",
       "_tgt": "onboardingwizard_handleskip",
@@ -3876,7 +3885,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L812",
+      "source_location": "L821",
       "weight": 1.0,
       "_src": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_onboardingwizard_tsx",
       "_tgt": "onboardingwizard_canproceed",
@@ -3888,7 +3897,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/OnboardingWizard.tsx",
-      "source_location": "L817",
+      "source_location": "L826",
       "weight": 1.0,
       "_src": "users_taaqibmasood_documents_web_dev_saas_reva_ai_components_onboardingwizard_tsx",
       "_tgt": "onboardingwizard_renderstep",
@@ -4812,7 +4821,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/lib/dashboard-context.tsx",
-      "source_location": "L79",
+      "source_location": "L84",
       "weight": 1.0,
       "_src": "users_taaqibmasood_documents_web_dev_saas_reva_ai_lib_dashboard_context_tsx",
       "_tgt": "dashboard_context_usedashboard",

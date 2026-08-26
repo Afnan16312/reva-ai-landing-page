@@ -17,6 +17,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { sendWhatsAppMessage } from "@/lib/whatsapp";
 import type { RevaClinic, RevaDoctor } from "@/lib/supabase/types";
+import { formatDate, formatTime } from "@/lib/utils";
 
 type BotState =
   | "idle"
@@ -50,12 +51,6 @@ function nextDays(n: number): string[] {
   return days;
 }
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("en-IN", {
-    weekday: "short", day: "numeric", month: "short",
-  });
-}
-
 function generateSlots(date: string, slotMinutes: number): string[] {
   // Simple 9AM–5PM slots, skip lunch 1–2PM
   const slots: string[] = [];
@@ -69,13 +64,6 @@ function generateSlots(date: string, slotMinutes: number): string[] {
   }
   // Return only 6 slots for readability
   return slots.slice(0, 6);
-}
-
-function formatTime(time: string) {
-  const [h, m] = time.split(":").map(Number);
-  const period = h >= 12 ? "PM" : "AM";
-  const h12 = h % 12 || 12;
-  return `${h12}:${String(m).padStart(2, "0")} ${period}`;
 }
 
 const KEYWORDS = {

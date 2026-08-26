@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCountUp } from "@/lib/utils";
 import {
   FileText,
   Clock,
@@ -178,26 +179,6 @@ const modalAnim = {
   show:   { opacity: 1, scale: 1, transition: { ease: "easeOut" as const, duration: 0.25 } },
   exit:   { opacity: 0, scale: 0.95, transition: { ease: "easeOut" as const, duration: 0.15 } },
 };
-
-// ─────────────────────────────────────────────
-// COUNT-UP HOOK
-// ─────────────────────────────────────────────
-function useCountUp(target: number, duration = 1200) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let start: number | null = null;
-    const step = (timestamp: number) => {
-      if (!start) start = timestamp;
-      const elapsed = timestamp - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [target, duration]);
-  return value;
-}
 
 // ─────────────────────────────────────────────
 // STAT CARD
