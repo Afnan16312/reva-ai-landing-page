@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { createClient } from "@/lib/supabase/client";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MessageSquare,
@@ -607,11 +608,15 @@ function Step7({
   clinicInfo,
   workingHours,
   doctors,
+  greeting,
+  whatsappNum,
   onComplete,
 }: {
   clinicInfo: { name: string; city: string; phone: string; doctorCount: string };
   workingHours: DayConfig[];
   doctors: Doctor[];
+  greeting: string;
+  whatsappNum: string;
   onComplete: () => void;
 }) {
   const enabledDays = workingHours.filter((d) => d.enabled);
@@ -620,8 +625,58 @@ function Step7({
       ? "No days configured"
       : `${enabledDays.length} days/week`;
 
-  const handleGo = () => {
+  const handleGo = async () => {
     localStorage.setItem("reva_onboarded", "true");
+
+    // Persist to Supabase
+    try {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        // Build working_hours JSON keyed by 3-letter day
+        const dayKeys: Record<string, string> = {
+          Monday: "mon", Tuesday: "tue", Wednesday: "wed", Thursday: "thu",
+          Friday: "fri", Saturday: "sat", Sunday: "sun",
+        };
+        const working_hours: Record<string, { open: string; close: string } | null> = {};
+        workingHours.forEach(d => {
+          working_hours[dayKeys[d.day]] = d.enabled ? { open: d.open, close: d.close } : null;
+        });
+
+        // Upsert clinic
+        const { data: clinic } = await supabase
+          .from("reva_clinics")
+          .upsert({
+            owner_id: user.id,
+            name: clinicInfo.name || "My Clinic",
+            phone: clinicInfo.phone,
+            whatsapp_number: whatsappNum,
+            address: clinicInfo.city,
+            greeting_message: greeting,
+            working_hours,
+            updated_at: new Date().toISOString(),
+          }, { onConflict: "owner_id" })
+          .select("id")
+          .single();
+
+        // Insert doctors
+        if (clinic?.id) {
+          const validDoctors = doctors.filter(d => d.name.trim());
+          if (validDoctors.length > 0) {
+            await supabase.from("reva_doctors").upsert(
+              validDoctors.map(d => ({
+                clinic_id: clinic.id,
+                name: d.name.trim(),
+                specialization: d.specialty.trim() || null,
+              }))
+            );
+          }
+        }
+      }
+    } catch (e) {
+      console.error("Onboarding save error:", e);
+    }
+
     onComplete();
   };
 
@@ -731,8 +786,26 @@ export default function OnboardingWizard({ onComplete }: OnboardingWizardProps) 
     setStep((s) => Math.max(s - 1, 1));
   };
 
-  const handleSkip = () => {
+  const handleSkip = async () => {
     localStorage.setItem("reva_onboarded", "true");
+    // Save whatever partial data we have so far
+    if (clinicInfo.name) {
+      try {
+        const supabase = createClient();
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+          await supabase.from("reva_clinics").upsert({
+            owner_id: user.id,
+            name: clinicInfo.name || "My Clinic",
+            phone: clinicInfo.phone,
+            whatsapp_number: whatsappNum,
+            updated_at: new Date().toISOString(),
+          }, { onConflict: "owner_id" });
+        }
+      } catch (e) {
+        console.error("Skip save error:", e);
+      }
+    }
     onComplete();
   };
 
@@ -783,6 +856,8 @@ export default function OnboardingWizard({ onComplete }: OnboardingWizardProps) 
             clinicInfo={clinicInfo}
             workingHours={workingHours}
             doctors={doctors}
+            greeting={greeting}
+            whatsappNum={whatsappNum}
             onComplete={onComplete}
           />
         );

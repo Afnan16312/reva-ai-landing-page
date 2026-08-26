@@ -7,6 +7,9 @@ export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
   const path = req.nextUrl.pathname;
 
+  // DEMO MODE: skip auth
+  if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") return res;
+
   // Only run on protected routes
   const isProtected = PROTECTED.some(p => path.startsWith(p));
   if (!isProtected) return res;

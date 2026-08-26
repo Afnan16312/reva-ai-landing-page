@@ -984,6 +984,7 @@ function DashboardPageInner() {
   const { clinic } = useDashboard();
 
   useEffect(() => {
+    if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") return; // skip in demo
     if (!localStorage.getItem("reva_onboarded")) setShowOnboarding(true);
   }, []);
 
