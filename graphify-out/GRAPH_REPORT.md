@@ -1,12 +1,12 @@
 # Graph Report - /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai  (2026-08-26)
 
 ## Corpus Check
-- 57 files · ~88,715 words
+- 60 files · ~88,779 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 204 nodes · 256 edges · 37 communities detected
-- Extraction: 84% EXTRACTED · 16% INFERRED · 0% AMBIGUOUS · INFERRED: 42 edges (avg confidence: 0.8)
+- 203 nodes · 252 edges · 33 communities detected
+- Extraction: 79% EXTRACTED · 21% INFERRED · 0% AMBIGUOUS · INFERRED: 53 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -43,10 +43,6 @@
 - [[_COMMUNITY_Community 30|Community 30]]
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
-- [[_COMMUNITY_Community 33|Community 33]]
-- [[_COMMUNITY_Community 34|Community 34]]
-- [[_COMMUNITY_Community 35|Community 35]]
-- [[_COMMUNITY_Community 36|Community 36]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `addToast()` - 20 edges
@@ -55,91 +51,91 @@
 4. `GET()` - 14 edges
 5. `handleBotMessage()` - 12 edges
 6. `createClient()` - 9 edges
-7. `PATCH()` - 7 edges
-8. `sendWhatsAppMessage()` - 7 edges
-9. `runReminders()` - 6 edges
-10. `update()` - 6 edges
+7. `useCountUp()` - 8 edges
+8. `PATCH()` - 7 edges
+9. `sendWhatsAppMessage()` - 7 edges
+10. `runReminders()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `addToast()` --calls--> `loadRecentRx()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/PrescriptionView.tsx
+- `StatCard()` --calls--> `useCountUp()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/NoShowView.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/lib/hooks.ts
+- `updateStatus()` --calls--> `updateAppointment()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/lib/api.ts
+- `sendMsg()` --calls--> `sendMessage()`  [INFERRED]
+  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/lib/api.ts
 - `addToast()` --calls--> `sendLink()`  [INFERRED]
   /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/DepositsView.tsx
-- `addToast()` --calls--> `addInvoice()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx
-- `addToast()` --calls--> `sendAllReminders()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx
-- `addToast()` --calls--> `remindOne()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/BillingView.tsx
-- `addToast()` --calls--> `handleReminder()`  [INFERRED]
-  /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/app/dashboard/page.tsx → /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai/components/ConsentView.tsx
 
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.11
-Nodes (12): update(), DELETE(), GET(), getClinic(), handleStatusUpdate(), PATCH(), POST(), runReminders() (+4 more)
+Cohesion: 0.06
+Nodes (22): addInvoice(), remindOne(), sendAllReminders(), handleManualSign(), handleReminder(), handleSaveTemplate(), handleSend(), sendLink() (+14 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.12
-Nodes (15): middleware(), handleCall(), handleRemind(), handleReschedule(), StatCard(), useCountUp(), addToast(), markAll() (+7 more)
+Cohesion: 0.11
+Nodes (13): handleSkip(), update(), DELETE(), GET(), getClinic(), handleStatusUpdate(), PATCH(), POST() (+5 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.11
-Nodes (3): goNext(), handleSkip(), handler()
+Nodes (8): StatCard(), StatCard(), StatCard(), useCountUp(), StatCard(), loadRecentRx(), StatCard(), AnimatedStat()
 
 ### Community 3 - "Community 3"
+Cohesion: 0.11
+Nodes (2): goNext(), handler()
+
+### Community 4 - "Community 4"
 Cohesion: 0.22
 Nodes (17): apiFetch(), createAppointment(), createInvoice(), createPatient(), getAppointments(), getClinic(), getConversations(), getFollowUps() (+9 more)
 
-### Community 4 - "Community 4"
-Cohesion: 0.15
-Nodes (5): buildDaySlots(), formatTime(), selectDay(), StatCard(), useCountUp()
-
 ### Community 5 - "Community 5"
-Cohesion: 0.36
-Nodes (11): confirmAndBook(), formatDate(), formatTime(), generateSlots(), goToShowDoctors(), handleBotMessage(), matchesKeyword(), nextDays() (+3 more)
+Cohesion: 0.25
+Nodes (11): confirmAndBook(), generateSlots(), goToShowDoctors(), handleBotMessage(), matchesKeyword(), nextDays(), reply(), saveState() (+3 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.18
-Nodes (6): handleManualSign(), handleReminder(), handleSaveTemplate(), handleSend(), StatCard(), useCountUp()
+Cohesion: 0.16
+Nodes (3): buildDaySlots(), formatTime(), selectDay()
 
 ### Community 7 - "Community 7"
-Cohesion: 0.25
-Nodes (5): addInvoice(), remindOne(), sendAllReminders(), StatCard(), useCountUp()
+Cohesion: 0.5
+Nodes (0): 
 
 ### Community 8 - "Community 8"
-Cohesion: 0.29
-Nodes (3): loadRecentRx(), StatCard(), useCountUp()
+Cohesion: 0.67
+Nodes (0): 
 
 ### Community 9 - "Community 9"
-Cohesion: 0.4
-Nodes (2): StatCard(), useCountUp()
+Cohesion: 0.67
+Nodes (0): 
 
 ### Community 10 - "Community 10"
-Cohesion: 0.5
+Cohesion: 0.67
 Nodes (0): 
 
 ### Community 11 - "Community 11"
-Cohesion: 0.5
-Nodes (1): sendLink()
+Cohesion: 0.67
+Nodes (0): 
 
 ### Community 12 - "Community 12"
-Cohesion: 0.67
+Cohesion: 1.0
 Nodes (0): 
 
 ### Community 13 - "Community 13"
-Cohesion: 0.67
+Cohesion: 1.0
 Nodes (0): 
 
 ### Community 14 - "Community 14"
-Cohesion: 0.67
+Cohesion: 1.0
 Nodes (0): 
 
 ### Community 15 - "Community 15"
 Cohesion: 1.0
-Nodes (2): AnimatedStat(), useCountUp()
+Nodes (0): 
 
 ### Community 16 - "Community 16"
-Cohesion: 0.67
+Cohesion: 1.0
 Nodes (0): 
 
 ### Community 17 - "Community 17"
@@ -206,78 +202,64 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 33 - "Community 33"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 34 - "Community 34"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 35 - "Community 35"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 36 - "Community 36"
-Cohesion: 1.0
-Nodes (0): 
-
 ## Knowledge Gaps
-- **Thin community `Community 17`** (2 nodes): `Home()`, `page.tsx`
+- **Thin community `Community 12`** (2 nodes): `Home()`, `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 18`** (2 nodes): `handleSubmit()`, `page.tsx`
+- **Thin community `Community 13`** (2 nodes): `handleSubmit()`, `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 19`** (2 nodes): `Navbar()`, `Navbar.tsx`
+- **Thin community `Community 14`** (2 nodes): `Navbar()`, `Navbar.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 20`** (2 nodes): `Features()`, `Features.tsx`
+- **Thin community `Community 15`** (2 nodes): `Features()`, `Features.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (2 nodes): `BriefButton()`, `BriefButton.tsx`
+- **Thin community `Community 16`** (2 nodes): `getInitials()`, `ReferralView.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 22`** (2 nodes): `createClient()`, `client.ts`
+- **Thin community `Community 17`** (2 nodes): `BriefButton()`, `BriefButton.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 23`** (1 nodes): `postcss.config.mjs`
+- **Thin community `Community 18`** (2 nodes): `createClient()`, `client.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 24`** (1 nodes): `server.js`
+- **Thin community `Community 19`** (1 nodes): `postcss.config.mjs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (1 nodes): `next.config.mjs`
+- **Thin community `Community 20`** (1 nodes): `server.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 26`** (1 nodes): `next-env.d.ts`
+- **Thin community `Community 21`** (1 nodes): `next.config.mjs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 27`** (1 nodes): `eslint.config.mjs`
+- **Thin community `Community 22`** (1 nodes): `next-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (1 nodes): `layout.tsx`
+- **Thin community `Community 23`** (1 nodes): `eslint.config.mjs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (1 nodes): `Hero.tsx`
+- **Thin community `Community 24`** (1 nodes): `layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (1 nodes): `Pricing.tsx`
+- **Thin community `Community 25`** (1 nodes): `Hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (1 nodes): `HowItWorks.tsx`
+- **Thin community `Community 26`** (1 nodes): `Pricing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (1 nodes): `ReviewsView.tsx`
+- **Thin community `Community 27`** (1 nodes): `HowItWorks.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 33`** (1 nodes): `Testimonials.tsx`
+- **Thin community `Community 28`** (1 nodes): `ReviewsView.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 34`** (1 nodes): `FollowUpView.tsx`
+- **Thin community `Community 29`** (1 nodes): `Testimonials.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 35`** (1 nodes): `CTA.tsx`
+- **Thin community `Community 30`** (1 nodes): `FollowUpView.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 36`** (1 nodes): `types.ts`
+- **Thin community `Community 31`** (1 nodes): `CTA.tsx`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 32`** (1 nodes): `types.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `addToast()` connect `Community 1` to `Community 8`, `Community 11`, `Community 6`, `Community 7`?**
-  _High betweenness centrality (0.105) - this node is a cross-community bridge._
-- **Why does `POST()` connect `Community 0` to `Community 5`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
-- **Why does `update()` connect `Community 0` to `Community 2`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Why does `addToast()` connect `Community 0` to `Community 2`?**
+  _High betweenness centrality (0.132) - this node is a cross-community bridge._
+- **Why does `useCountUp()` connect `Community 2` to `Community 0`?**
+  _High betweenness centrality (0.090) - this node is a cross-community bridge._
+- **Why does `StatCard()` connect `Community 2` to `Community 6`?**
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Are the 15 inferred relationships involving `addToast()` (e.g. with `sendLink()` and `addInvoice()`) actually correct?**
   _`addToast()` has 15 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 7 inferred relationships involving `POST()` (e.g. with `createClient()` and `sendWhatsAppMessage()`) actually correct?**
   _`POST()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 2 inferred relationships involving `handleBotMessage()` (e.g. with `POST()` and `createClient()`) actually correct?**
-  _`handleBotMessage()` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 4 inferred relationships involving `handleBotMessage()` (e.g. with `POST()` and `createClient()`) actually correct?**
+  _`handleBotMessage()` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.11 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
