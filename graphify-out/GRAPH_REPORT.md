@@ -1,7 +1,7 @@
 # Graph Report - /Users/taaqibmasood/Documents/Web Dev & Saas/reva-ai  (2026-08-31)
 
 ## Corpus Check
-- 201 files · ~974,893 words
+- 201 files · ~974,968 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary

@@ -246,7 +246,7 @@ export default function BillingView({ addToast }: BillingViewProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-[1.5fr_1.5fr_1fr_1fr_auto] gap-4 px-6 py-3 bg-[#F8FAFC] border-b border-[#CCD5DF] text-[11px] font-bold uppercase tracking-wider text-slate-500">
+        <div className="grid grid-cols-[1.8fr_1.6fr_1fr_1.3fr_180px] gap-4 px-6 py-3 bg-[#F8FAFC] border-b border-[#CCD5DF] text-[11px] font-bold uppercase tracking-wider text-slate-500 items-center">
           <span>Patient</span>
           <span>Service</span>
           <span>Amount</span>
@@ -259,24 +259,24 @@ export default function BillingView({ addToast }: BillingViewProps) {
             <div key={inv.id} className="hover:bg-slate-50 transition-colors">
               <div
                 onClick={() => setExpandedId(expandedId === inv.id ? null : inv.id)}
-                className="grid grid-cols-[1.5fr_1.5fr_1fr_1fr_auto] gap-4 px-6 py-3.5 items-center cursor-pointer text-xs"
+                className="grid grid-cols-[1.8fr_1.6fr_1fr_1.3fr_180px] gap-4 px-6 py-3.5 items-center cursor-pointer text-xs"
               >
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2.5 min-w-0">
                   <div className="w-7 h-7 rounded-full bg-[#00685f]/15 text-[#00685f] font-bold text-[10px] flex items-center justify-center shrink-0">
                     {inv.initials}
                   </div>
-                  <div>
-                    <p className="font-bold text-[#0F172A]">{inv.patientName}</p>
+                  <div className="min-w-0">
+                    <p className="font-bold text-[#0F172A] truncate">{inv.patientName}</p>
                     <p className="text-[10px] text-slate-400">{inv.time}</p>
                   </div>
                 </div>
 
-                <span className="text-slate-600 font-medium">{inv.service}</span>
+                <span className="text-slate-600 font-medium truncate">{inv.service}</span>
                 <span className="font-mono font-bold text-[#0F172A]">AED {inv.amount}</span>
 
                 <div>
                   <span
-                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${
+                    className={`inline-flex items-center justify-center min-w-[90px] px-2.5 py-0.5 rounded-full text-[11px] font-bold border text-center ${
                       inv.status === "Paid"
                         ? "bg-emerald-50 text-emerald-700 border-emerald-200"
                         : inv.status === "Pending"
@@ -288,24 +288,26 @@ export default function BillingView({ addToast }: BillingViewProps) {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 justify-end">
+                <div className="flex items-center gap-2 justify-end w-full">
                   {inv.status === "Pending" && (
                     <div className="flex gap-1">
                       <button
                         onClick={(e) => { e.stopPropagation(); markPaid(inv.id, "Apple Pay"); }}
-                        className="px-2 py-0.5 bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-bold rounded hover:bg-emerald-100"
+                        className="px-2 py-0.5 bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-bold rounded hover:bg-emerald-100 shadow-2xs whitespace-nowrap"
                       >
                         Paid (Apple Pay)
                       </button>
                       <button
                         onClick={(e) => { e.stopPropagation(); markPaid(inv.id, "Cash"); }}
-                        className="px-2 py-0.5 bg-slate-50 border border-slate-200 text-slate-700 text-[11px] font-bold rounded hover:bg-slate-100"
+                        className="px-2 py-0.5 bg-slate-50 border border-slate-200 text-slate-700 text-[11px] font-bold rounded hover:bg-slate-100 shadow-2xs whitespace-nowrap"
                       >
                         Cash
                       </button>
                     </div>
                   )}
-                  {expandedId === inv.id ? <ChevronUp size={14} className="text-slate-400" /> : <ChevronDown size={14} className="text-slate-400" />}
+                  <div className="text-slate-400 hover:text-slate-600 shrink-0">
+                    {expandedId === inv.id ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                  </div>
                 </div>
               </div>
 

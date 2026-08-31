@@ -212,52 +212,49 @@ function DashboardView({ addToast, setActiveView }: { addToast: (msg: string, ty
         <p className="text-sm text-slate-500 mt-0.5">Real-time clinic metrics, today&apos;s schedule, and AI agent operations.</p>
       </div>
 
-      {/* Bento KPI Cards */}
+      {/* Bento KPI Cards — Daily Operations Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white border border-[#CCD5DF] rounded-xl p-5 shadow-xs">
           <div className="flex justify-between items-start mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Today&apos;s Consults</span>
-            <Calendar className="w-4 h-4 text-[#00685f]" />
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">New Enquiries</span>
+            <MessageSquare className="w-4 h-4 text-[#00685f]" />
           </div>
-          <p className="text-3xl font-bold text-[#0F172A] mb-1">
-            {appts.filter(a => a.status !== "Cancelled").length}
-          </p>
+          <p className="text-3xl font-bold text-[#0F172A] mb-1">28</p>
           <div className="flex items-center gap-1 text-xs text-emerald-700 font-semibold">
             <TrendingUp className="w-3.5 h-3.5" />
-            <span>+3 from yesterday</span>
+            <span>+14% today via WhatsApp</span>
           </div>
         </div>
 
         <div className="bg-white border border-[#CCD5DF] rounded-xl p-5 shadow-xs">
           <div className="flex justify-between items-start mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">WhatsApp Bookings</span>
-            <MessageSquare className="w-4 h-4 text-[#00685f]" />
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Booked Consultations</span>
+            <Calendar className="w-4 h-4 text-[#00685f]" />
           </div>
           <p className="text-3xl font-bold text-[#00685f] mb-1">18</p>
           <div className="flex items-center gap-1 text-xs text-emerald-700 font-semibold">
             <TrendingUp className="w-3.5 h-3.5" />
-            <span>75% automated by AI</span>
+            <span>100% automated by AI</span>
           </div>
         </div>
 
         <div className="bg-white border border-[#CCD5DF] rounded-xl p-5 shadow-xs">
           <div className="flex justify-between items-start mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Recovered Revenue</span>
-            <CreditCard className="w-4 h-4 text-[#00685f]" />
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Pending Confirmations</span>
+            <Clock className="w-4 h-4 text-amber-500" />
           </div>
-          <p className="text-3xl font-bold text-emerald-700 mb-1">AED 14,800</p>
-          <span className="text-xs text-slate-500">Via automated follow-ups</span>
+          <p className="text-3xl font-bold text-amber-700 mb-1">4</p>
+          <span className="text-xs text-slate-500">Awaiting patient slot selection</span>
         </div>
 
         <div className="bg-white border border-[#CCD5DF] rounded-xl p-5 shadow-xs">
           <div className="flex justify-between items-start mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">No-Show Rate</span>
-            <AlertCircle className="w-4 h-4 text-[#00685f]" />
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Staff Follow-ups Required</span>
+            <AlertCircle className="w-4 h-4 text-rose-500" />
           </div>
-          <p className="text-3xl font-bold text-[#0F172A] mb-1">4.2%</p>
-          <div className="flex items-center gap-1 text-xs text-emerald-700 font-semibold">
-            <TrendingUp className="w-3.5 h-3.5" />
-            <span>-1.1% this week</span>
+          <p className="text-3xl font-bold text-rose-600 mb-1">3</p>
+          <div className="flex items-center gap-1 text-xs text-rose-700 font-semibold">
+            <span>Escalations for Coordinator</span>
           </div>
         </div>
       </div>

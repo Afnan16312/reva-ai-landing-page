@@ -81,64 +81,92 @@ interface WhatsAppContact {
 const DEFAULT_CONTACTS: WhatsAppContact[] = [
   {
     id: "c1",
-    name: "Priya Sharma",
-    phone: "+971 50 123 4567",
+    name: "Sarah Al-Hashimi",
+    phone: "+971 50 892 4110",
     avatarColor: "bg-[#00685f]",
-    initials: "PS",
-    lastMessage: "Thanks! See you tomorrow at 10:30 AM 🙏",
-    lastMessageTime: "09:42 AM",
+    initials: "SA",
+    lastMessage: "✅ Booked & Confirmed! Dental Implant Consultation tomorrow at 10:30 AM",
+    lastMessageTime: "10:18 AM",
     unreadCount: 0,
     isOnline: true,
     statusText: "online",
     category: "appointment",
-    tag: "Consultation Confirmed",
-    upcomingAppt: "Tomorrow, 10:30 AM (General Checkup)",
-    bloodGroup: "B+",
-    allergies: ["Sulfa Drugs"],
+    tag: "Implant Consultation Booked",
+    upcomingAppt: "Tomorrow, 10:30 AM (Dental Implant Consultation)",
+    bloodGroup: "O+",
+    allergies: ["None recorded"],
     messages: [
       {
         id: "m1",
-        from: "reva",
-        text: "Hi Priya! 👋 Welcome to Dr. Sharma's Clinic. How can we assist you today?",
-        time: "09:30 AM",
+        from: "patient",
+        text: "I want to ask about dental implants.",
+        time: "10:14 AM",
         type: "text",
       },
       {
         id: "m2",
-        from: "patient",
-        text: "Hi, I have a mild fever and cough. Can I book a consultation with Dr. Sharma tomorrow morning?",
-        time: "09:31 AM",
+        from: "reva",
+        text: "Hello and welcome to Dar Basmah Dental Center, Dubai! 👋\n\nTo assist you promptly, please select your preferred language:\n1️⃣ English 🇬🇧\n2️⃣ العربية 🇦🇪",
+        time: "10:14 AM",
         type: "text",
       },
       {
         id: "m3",
-        from: "reva",
-        text: "Dr. Sharma has the following slots open for tomorrow morning. Please select your preferred time:",
-        time: "09:31 AM",
-        type: "booking_card",
-        meta: {
-          slots: ["10:30 AM", "11:15 AM", "02:00 PM"],
-        },
+        from: "patient",
+        text: "English 🇬🇧",
+        time: "10:15 AM",
+        type: "text",
       },
       {
         id: "m4",
-        from: "patient",
-        text: "10:30 AM works perfectly for me!",
-        time: "09:32 AM",
+        from: "reva",
+        text: "Thank you! Which dental implant service can we help you with today?\n\n• Single Dental Implant (Swiss / Straumann)\n• Full Arch Reconstruction (All-on-4 / All-on-6)\n• Specialist Consultation & 3D CBCT Scan",
+        time: "10:15 AM",
         type: "text",
       },
       {
         id: "m5",
-        from: "reva",
-        text: "✅ Booked & Confirmed! Your appointment with Dr. Sharma is scheduled for tomorrow at 10:30 AM. Please arrive 10 minutes prior for quick vitals.",
-        time: "09:32 AM",
+        from: "patient",
+        text: "Single Dental Implant & 3D Scan with Dr. Basmah.",
+        time: "10:16 AM",
         type: "text",
       },
       {
         id: "m6",
+        from: "reva",
+        text: "Dr. Basmah (Lead Implantologist) is available at our Jumeirah 1 center this week.\n\nWould you prefer to lock in a consultation slot directly, or request a callback from our implant coordinator?",
+        time: "10:16 AM",
+        type: "text",
+      },
+      {
+        id: "m7",
         from: "patient",
-        text: "Thanks! See you tomorrow at 10:30 AM 🙏",
-        time: "09:42 AM",
+        text: "I'd like to book an appointment slot directly for tomorrow morning please.",
+        time: "10:17 AM",
+        type: "text",
+      },
+      {
+        id: "m8",
+        from: "reva",
+        text: "Here are the open consultation slots with Dr. Basmah for tomorrow:",
+        time: "10:17 AM",
+        type: "booking_card",
+        meta: {
+          slots: ["Tomorrow 10:30 AM", "Tomorrow 11:45 AM", "Tomorrow 02:30 PM"],
+        },
+      },
+      {
+        id: "m9",
+        from: "patient",
+        text: "Tomorrow 10:30 AM works perfectly.",
+        time: "10:18 AM",
+        type: "text",
+      },
+      {
+        id: "m10",
+        from: "reva",
+        text: "✅ Booked & Confirmed!\n\n📍 Patient: Sarah Al-Hashimi\n🩺 Service: Dental Implant Consultation & 3D CT Scan\n👩‍⚕️ Doctor: Dr. Basmah\n📅 Slot: Tomorrow at 10:30 AM\n🏢 Location: Dar Basmah Dental Clinic, Jumeirah 1, Dubai\n\nA confirmation SMS and calendar invite have been sent. Please arrive 10 minutes prior for initial scans.",
+        time: "10:18 AM",
         type: "text",
       },
     ],
@@ -149,8 +177,8 @@ const DEFAULT_CONTACTS: WhatsAppContact[] = [
     phone: "+971 55 234 5678",
     avatarColor: "bg-teal-700",
     initials: "RG",
-    lastMessage: "Here is your digital prescription for today's visit.",
-    lastMessageTime: "08:15 AM",
+    lastMessage: "Thank you doctor! Should I take the Paracetamol after meals?",
+    lastMessageTime: "08:45 AM",
     unreadCount: 1,
     isOnline: false,
     statusText: "last seen today at 8:45 AM",
@@ -162,24 +190,31 @@ const DEFAULT_CONTACTS: WhatsAppContact[] = [
     messages: [
       {
         id: "rg1",
+        from: "patient",
+        text: "Hi doctor, I finished my consultation earlier today. Could you please send me a digital copy of my prescription?",
+        time: "08:14 AM",
+        type: "text",
+      },
+      {
+        id: "rg2",
         from: "reva",
-        text: "Hello Rahul! Thank you for consulting Dr. Sharma today. Below is your verified digital prescription PDF:",
+        text: "Hello Rahul! Here is your verified digital prescription PDF from Dr. Basmah:",
         time: "08:15 AM",
         type: "rx_attachment",
         meta: {
-          fileName: "Rx_DrSharma_RahulGupta_2026.pdf",
+          fileName: "Rx_DarBasmah_RahulGupta_2026.pdf",
           fileSize: "1.2 MB",
         },
       },
       {
-        id: "rg2",
+        id: "rg3",
         from: "patient",
-        text: "Thank you doctor! Should I take the Paracetamol after lunch?",
+        text: "Thank you doctor! Should I take the Paracetamol after meals?",
         time: "08:45 AM",
         type: "text",
       },
       {
-        id: "rg3",
+        id: "rg4",
         from: "reva",
         text: "Yes, take 1 tablet Paracetamol 500mg after meals, 3 times a day. Stay well hydrated!",
         time: "08:46 AM",
@@ -218,7 +253,7 @@ const DEFAULT_CONTACTS: WhatsAppContact[] = [
       {
         id: "an2",
         from: "reva",
-        text: "We have reviewed your symptoms. Dr. Sharma recommends a dental extraction evaluation. We have reserved Saturday at 11:30 AM for you.",
+        text: "We have reviewed your symptoms. Dr. Basmah recommends a dental extraction evaluation. We have reserved Saturday at 11:30 AM for you.",
         time: "Yesterday 4:12 PM",
         type: "text",
       },
@@ -243,6 +278,13 @@ const DEFAULT_CONTACTS: WhatsAppContact[] = [
     messages: [
       {
         id: "vp1",
+        from: "patient",
+        text: "Good afternoon, are my diagnostic blood test and lipid reports from Al Zahra ready yet?",
+        time: "Yesterday 3:28 PM",
+        type: "text",
+      },
+      {
+        id: "vp2",
         from: "reva",
         text: "Hi Vikram, your Fasting Blood Sugar and Lipid Profile reports from Al Zahra Diagnostics, Dubai are ready:",
         time: "Yesterday 3:30 PM",
@@ -254,9 +296,9 @@ const DEFAULT_CONTACTS: WhatsAppContact[] = [
         },
       },
       {
-        id: "vp2",
+        id: "vp3",
         from: "patient",
-        text: "Received, thank you! I will discuss the values with Dr. Sharma during my Monday visit.",
+        text: "Received, thank you! I will discuss the values with Dr. Basmah during my Monday visit.",
         time: "Yesterday 3:45 PM",
         type: "text",
       },
@@ -265,18 +307,19 @@ const DEFAULT_CONTACTS: WhatsAppContact[] = [
 ];
 
 const QUICK_REPLIES = [
+  "⚡ Escalate to Coordinator",
   "✅ Confirm Appointment",
   "📍 Clinic Location & Directions",
   "💳 Send Digital Payment Link (AED)",
   "📄 Send Digital Rx PDF",
   "⭐ Request Google Review",
-  "🩺 Pre-consultation Checklist",
 ];
 
 export default function MessagesView({ addToast }: MessagesViewProps) {
   const { conversations: realConvos, refresh } = useDashboard();
   const [contacts, setContacts] = useState<WhatsAppContact[]>(DEFAULT_CONTACTS);
   const [activeContactId, setActiveContactId] = useState<string>("c1");
+  const [takenOverIds, setTakenOverIds] = useState<Record<string, boolean>>({});
   const [search, setSearch] = useState("");
   const [filterTab, setFilterTab] = useState<"all" | "unread" | "appointment" | "followup">("all");
   const [inputText, setInputText] = useState("");
@@ -368,16 +411,38 @@ export default function MessagesView({ addToast }: MessagesViewProps) {
   };
 
   const handleQuickReply = (chip: string) => {
-    if (chip.includes("Confirm Appointment")) {
-      handleSendMessage("Your appointment is confirmed with Dr. Sharma. Please arrive on time.");
+    if (chip.includes("Escalate")) {
+      const escMsg: ChatMessage = {
+        id: "esc-" + Date.now(),
+        from: "reva",
+        text: "📌 [Staff Escalation]: Please have the implant coordinator call this patient regarding 3D CBCT scan review and bone graft evaluation.",
+        time: new Date().toLocaleTimeString("en-AE", { hour: "2-digit", minute: "2-digit" }),
+        type: "text",
+      };
+      setContacts((prev) =>
+        prev.map((c) =>
+          c.id === activeContactId
+            ? {
+                ...c,
+                tag: "Escalated: Coordinator Call",
+                lastMessage: "📌 Escalation note dispatched to implant coordinator",
+                lastMessageTime: escMsg.time,
+                messages: [...c.messages, escMsg],
+              }
+            : c
+        )
+      );
+      addToast("Escalated: Implant coordinator notified for patient callback ✓", "success");
+    } else if (chip.includes("Confirm Appointment")) {
+      handleSendMessage("Your appointment is confirmed with Dr. Basmah at Dar Basmah Clinic. Please arrive 10 minutes prior.");
     } else if (chip.includes("Clinic Location")) {
-      handleSendMessage("📍 Reva Medical Clinic: Suite 402, Al Razi Medical Complex (Bldg 64), Dubai Healthcare City, Dubai, UAE.");
+      handleSendMessage("📍 Dar Basmah Dental Center: Villa 12, Jumeirah 1 (near Jumeirah Mosque), Dubai, UAE. Complimentary valet parking available.");
     } else if (chip.includes("Payment Link")) {
-      handleSendMessage("💳 Here is your secure digital consultation payment link: https://reva.ae/pay/inv_904 (AED 350)");
+      handleSendMessage("💳 Here is your secure digital consultation payment link: https://reva.ae/pay/inv_904 (AED 500)");
     } else if (chip.includes("Prescription")) {
       handleSendMessage("📄 Please find your digital prescription attached. Feel free to message here for any medication queries.");
     } else if (chip.includes("Google Review")) {
-      handleSendMessage("⭐ We hope you had a great consultation! Would you take 30 seconds to rate Dr. Sharma on Google? https://g.page/r/revaclinic");
+      handleSendMessage("⭐ We hope you had a great consultation! Would you take 30 seconds to rate Dar Basmah Clinic on Google? https://g.page/r/darbasmah");
     } else {
       handleSendMessage(chip);
     }
@@ -517,11 +582,11 @@ export default function MessagesView({ addToast }: MessagesViewProps) {
       {/* ── CENTER PANEL: WhatsApp Chat Area ─────────────────────────────────────────── */}
       <div className="flex-1 flex flex-col bg-[#e5ddd5]/25 relative min-w-0">
         {/* WhatsApp Chat Top Header */}
-        <div className="h-15 px-4 bg-[#F8FAFC] border-b border-[#CCD5DF] flex items-center justify-between shrink-0 z-10">
+        <div className="h-16 px-4 bg-[#F8FAFC] border-b border-[#CCD5DF] flex items-center justify-between shrink-0 z-10">
           <div className="flex items-center gap-3">
             <div className="relative">
               <div
-                className={`w-9 h-9 rounded-full ${activeContact.avatarColor} text-white font-bold text-xs flex items-center justify-center`}
+                className={`w-9 h-9 rounded-full ${activeContact.avatarColor} text-white font-bold text-xs flex items-center justify-center shadow-xs`}
               >
                 {activeContact.initials}
               </div>
@@ -531,8 +596,21 @@ export default function MessagesView({ addToast }: MessagesViewProps) {
             </div>
 
             <div>
-              <h3 className="font-bold text-xs text-[#0F172A] leading-tight">{activeContact.name}</h3>
-              <p className="text-[10px] text-slate-500 flex items-center gap-1">
+              <div className="flex items-center gap-2">
+                <h3 className="font-bold text-xs text-[#0F172A] leading-tight">{activeContact.name}</h3>
+                {takenOverIds[activeContact.id] ? (
+                  <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-200 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                    Receptionist Takeover
+                  </span>
+                ) : (
+                  <span className="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-[#00685f]" />
+                    Reva AI Active
+                  </span>
+                )}
+              </div>
+              <p className="text-[10px] text-slate-500 flex items-center gap-1 mt-0.5">
                 <span className="font-mono">{activeContact.phone}</span> •{" "}
                 <span className={activeContact.isOnline ? "text-emerald-700 font-bold" : "text-slate-400"}>
                   {activeContact.statusText}
@@ -541,12 +619,83 @@ export default function MessagesView({ addToast }: MessagesViewProps) {
             </div>
           </div>
 
-          <div className="flex items-center gap-1 text-slate-500">
+          <div className="flex items-center gap-2">
+            {/* Take Over / Resume AI Button */}
+            <button
+              onClick={() => {
+                const nextState = !takenOverIds[activeContact.id];
+                setTakenOverIds((prev) => ({ ...prev, [activeContact.id]: nextState }));
+                if (nextState) {
+                  addToast("Receptionist Takeover Active — Reva AI paused for this chat", "info");
+                } else {
+                  addToast("Reva AI resumed for this conversation ✓", "success");
+                }
+              }}
+              className={`px-3 py-1.5 text-xs font-bold rounded-lg shadow-xs flex items-center gap-1.5 transition-all ${
+                takenOverIds[activeContact.id]
+                  ? "bg-amber-500 hover:bg-amber-600 text-white"
+                  : "bg-[#00685f] hover:bg-[#005049] text-white"
+              }`}
+            >
+              {takenOverIds[activeContact.id] ? (
+                <>
+                  <Sparkles size={13} /> Resume AI
+                </>
+              ) : (
+                <>
+                  <User size={13} /> Take over
+                </>
+              )}
+            </button>
+
+            <div className="h-4 w-px bg-slate-200 mx-0.5" />
+
             <motion.button whileTap={{ scale: 0.9 }} onClick={() => addToast(`Calling ${activeContact.name}...`, "info")} className="p-2 rounded-lg hover:bg-slate-200 hover:text-slate-700 transition-colors" title="Voice Call"><Phone size={15} /></motion.button>
             <motion.button whileTap={{ scale: 0.9 }} onClick={() => addToast(`Starting video consultation with ${activeContact.name}...`, "info")} className="p-2 rounded-lg hover:bg-slate-200 hover:text-slate-700 transition-colors" title="Video Consult"><Video size={16} /></motion.button>
             <motion.button whileTap={{ scale: 0.9 }} onClick={() => setShowDossier(!showDossier)} className={`p-2 rounded-lg transition-colors ${showDossier ? "bg-[#00685f]/15 text-[#00685f]" : "hover:bg-slate-200 hover:text-slate-700"}`} title="Toggle Patient Dossier"><User size={16} /></motion.button>
           </div>
         </div>
+
+        {/* Escalation & Takeover Banner */}
+        {takenOverIds[activeContact.id] && (
+          <div className="bg-amber-50 border-b border-amber-200 px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs z-10">
+            <div className="flex items-center gap-2 text-amber-900 font-semibold">
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
+              <span>Receptionist Takeover Active • Reva AI auto-responses paused for this patient.</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => {
+                  const escMsg: ChatMessage = {
+                    id: "esc-" + Date.now(),
+                    from: "reva",
+                    text: "📌 [Staff Escalation]: Please have the implant coordinator call this patient regarding 3D CBCT scan review and bone graft evaluation.",
+                    time: new Date().toLocaleTimeString("en-AE", { hour: "2-digit", minute: "2-digit" }),
+                    type: "text",
+                  };
+                  setContacts((prev) =>
+                    prev.map((c) =>
+                      c.id === activeContactId
+                        ? {
+                            ...c,
+                            tag: "Escalated: Coordinator Call",
+                            lastMessage: "📌 Escalation note dispatched to implant coordinator",
+                            lastMessageTime: escMsg.time,
+                            messages: [...c.messages, escMsg],
+                          }
+                        : c
+                    )
+                  );
+                  addToast("Escalated: Implant coordinator notified for patient callback ✓", "success");
+                }}
+                className="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-md shadow-2xs flex items-center gap-1.5 transition-colors"
+              >
+                ⚡ &ldquo;Please have the implant coordinator call this patient.&rdquo;
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* WhatsApp Chat Canvas with Authentic Doodle Wallpaper */}
         <div
