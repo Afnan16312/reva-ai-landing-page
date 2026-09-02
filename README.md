@@ -392,7 +392,7 @@ All data is saved to Supabase immediately. If the user skips any step, partial d
 | WhatsApp | Meta Cloud API v19.0 | Official WhatsApp Business API |
 | Payments | Razorpay Payment Links | India's leading payment gateway |
 | Deployment | Vercel | Edge network, automatic preview deployments |
-| Cron Jobs | Vercel Cron | Runs appointment reminders every 30 minutes |
+| Cron Jobs | Vercel Cron | Runs appointment reminders once daily on Vercel Hobby (30-minute cadence requires Pro) |
 | Package Manager | npm | Standard Node.js package manager |
 
 ---
@@ -598,7 +598,7 @@ npm install -g vercel
 vercel --prod
 ```
 
-The `vercel.json` file already configures the cron job to run reminders every 30 minutes automatically.
+The `vercel.json` file configures the cron job to run reminders once daily, which is compatible with Vercel's Hobby plan. A 30-minute cadence requires Vercel Pro.
 
 ---
 
@@ -635,7 +635,7 @@ booked ← terminal state (cleared after 24h)
 
 ## Automated Reminder System
 
-Every 30 minutes, Vercel Cron calls `GET /api/reminders`. This endpoint:
+Vercel Cron calls `GET /api/reminders` on the schedule defined in `vercel.json` (once daily on Vercel Hobby; every 30 minutes requires Vercel Pro). This endpoint:
 
 1. Queries all clinics from `reva_clinics`
 2. For each clinic, calculates the target time (`now + reminder_hours_before`)
@@ -647,7 +647,7 @@ Every 30 minutes, Vercel Cron calls `GET /api/reminders`. This endpoint:
 The cron schedule in `vercel.json`:
 ```json
 {
-  "crons": [{ "path": "/api/reminders", "schedule": "*/30 * * * *" }]
+  "crons": [{ "path": "/api/reminders", "schedule": "0 0 * * *" }]
 }
 ```
 
