@@ -18,7 +18,7 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://reva-ai-landing-page-delta.vercel.app"),
+  metadataBase: new URL("https://reva-ai-landing.vercel.app"),
   title: "Reva AI — AI Patient Operations Layer for UAE Clinics",
   description:
     "Reva AI integrates with WhatsApp to recover missed calls, reduce no-shows, and manage patient journeys for procedures like Cataract, LASIK, and Dry Eye care. DHA & HIPAA Compliant. Built for UAE clinics like Aloka Eye Clinic, Dubai.",
