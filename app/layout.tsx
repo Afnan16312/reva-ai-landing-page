@@ -18,7 +18,7 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://reva-ai.ae"),
+  metadataBase: new URL("https://reva-ai-landing-page-delta.vercel.app"),
   title: "Reva AI — AI Patient Operations Layer for UAE Clinics",
   description:
     "Reva AI integrates with WhatsApp to recover missed calls, reduce no-shows, and manage patient journeys for procedures like Cataract, LASIK, and Dry Eye care. DHA & HIPAA Compliant. Built for UAE clinics like Aloka Eye Clinic, Dubai.",
@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     "DHA compliant",
   ],
   authors: [{ name: "Reva AI" }],
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/icon.png", sizes: "192x192", type: "image/png" },
@@ -47,9 +50,10 @@ export const metadata: Metadata = {
       "Automate your clinic's front desk on WhatsApp. Missed-call recovery, no-show prevention, and AI patient briefs for UAE clinics.",
     siteName: "Reva AI",
     type: "website",
+    url: "/",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Reva AI — AI Patient Operations Layer for UAE Clinics",
@@ -61,7 +65,7 @@ export const metadata: Metadata = {
     title: "Reva AI — Never Miss a Patient",
     description:
       "Automate your clinic's front desk on WhatsApp. Missed-call recovery, no-show prevention, and AI patient briefs for UAE clinics.",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image"],
   },
 };
 
